@@ -99,7 +99,7 @@ export function HeroSection() {
           <div className="container mx-auto px-4 py-8 overflow-visible">
             <div className="flex flex-col md:flex-row justify-evenly items-center space-y-6 md:space-y-0">
               {/* Medical Treatment */}
-              <div className="flex items-center space-x-3 animate-slide-in-left justify-center md:justify-start">
+              <div className="flex items-center space-x-3 animate-slide-in-left flex-1 justify-center">
                 <div className="bg-white/20 p-3 rounded-full">
                   <Heart className="h-7 w-7" />
                 </div>
@@ -110,7 +110,7 @@ export function HeroSection() {
               </div>
 
               {/* Center Links - Uniform styling */}
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-slide-in-up animation-delay-300">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-slide-in-up animation-delay-300 flex-1">
                 <div className="flex items-center space-x-3 px-4 py-2">
                   <div className="bg-white/20 p-3 rounded-full">
                     <Zap className="h-6 w-6" />
@@ -144,7 +144,7 @@ export function HeroSection() {
               </div>
 
               {/* Emergency Contact */}
-              <div className="flex items-center justify-center md:justify-start space-x-3 animate-slide-in-right animation-delay-600">
+              <div className="flex items-center space-x-3 animate-slide-in-right flex-1 justify-center">
                 <div className="bg-white/20 p-3 rounded-full">
                   <Phone className="h-7 w-7" />
                 </div>
