@@ -1,4 +1,53 @@
+"use client"
+
 import Image from "next/image"
+import { useState, useEffect, useRef } from "react"
+
+// Componente auxiliar para animar o número
+function AnimatedNumber({ targetValue, duration = 2000 }: { targetValue: number; duration?: number }) {
+  const [currentValue, setCurrentValue] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+  const hasAnimated = useRef(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true
+          let start: number | null = null
+          const animate = (timestamp: number) => {
+            if (!start) start = timestamp
+            const progress = timestamp - start
+            const percentage = Math.min(progress / duration, 1)
+            setCurrentValue(Math.floor(percentage * targetValue))
+
+            if (percentage < 1) {
+              requestAnimationFrame(animate)
+            }
+          }
+          requestAnimationFrame(animate)
+        }
+      },
+      { threshold: 0.5 }, // Trigger when 50% of the element is visible
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [targetValue, duration])
+
+  return (
+    <div ref={ref} className="text-5xl font-bold text-teal-600 mb-2">
+      {currentValue}
+    </div>
+  )
+}
 
 export default function InstitucionalPage() {
   return (
@@ -43,15 +92,15 @@ export default function InstitucionalPage() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-5xl font-bold text-teal-600 mb-2">83</div>
+            <AnimatedNumber targetValue={83} />
             <div className="text-xl text-gray-600">anos de história</div>
           </div>
           <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-5xl font-bold text-teal-600 mb-2">12</div>
+            <AnimatedNumber targetValue={12} />
             <div className="text-xl text-gray-600">departamentos</div>
           </div>
           <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-5xl font-bold text-teal-600 mb-2">16</div>
+            <AnimatedNumber targetValue={16} />
             <div className="text-xl text-gray-600">especialidades</div>
           </div>
         </div>

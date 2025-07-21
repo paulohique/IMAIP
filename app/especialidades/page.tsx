@@ -63,9 +63,9 @@ export default function EspecialidadesPage() {
   return (
     <>
       {/* Hero Banner */}
-      <div className="bg-teal-600 text-white py-12">
+      <div className="bg-teal-600 text-white py-12 font-sans">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-2">Especialidades</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-2 font-sans fEspecialidadescialidades</h1>
           <p className="text-xl md:text-2xl font-normal">
             Conheça todas as especialidades médicas disponíveis em nosso hospital
           </p>
@@ -75,7 +75,7 @@ export default function EspecialidadesPage() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Clínica de Especialidades</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 font-sans font-sans font-sans font-sans">Clínica de Especialidades</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Com um Corpo Clínico que reúne os maiores médicos especialistas da região, o Hospital Policlínica de
             Barbacena possui a Clínica de Especialidades, oportunizando à população o acesso aos melhores profissionais.
