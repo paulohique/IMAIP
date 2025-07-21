@@ -1,6 +1,7 @@
 # Teste de Site - IMAIP
 
 Este projeto é um teste de criação de site para a instituição onde realizo estágio. Foi desenvolvido utilizando **Next.js**, com foco em estrutura, layout e organização de conteúdo para apresentação institucional.
+<img width="1403" height="692" alt="image" src="https://github.com/user-attachments/assets/01d2036b-1c51-42df-ad83-b14e4789d93b" />
 
 ## Tecnologias Utilizadas
 
