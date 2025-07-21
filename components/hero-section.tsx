@@ -55,7 +55,7 @@ export function HeroSection() {
               82 ANOS DE HISTÓRIA
             </p>
             <p className="text-lg mb-8 opacity-90 animate-fade-in-up animation-delay-400">
-              Na excelência do cuidado, nossa prioridade é você!  
+              Na excelência do cuidado, nossa prioridade é você!
             </p>
             <p className="text-base mb-8 max-w-2xl animate-fade-in-up animation-delay-600">
               Há mais de oito décadas cuidando da saúde da população de Barbacena e região. Oferecemos atendimento
@@ -144,13 +144,13 @@ export function HeroSection() {
               </div>
 
               {/* Emergency Contact */}
-              <div className="flex items-center justify-center md:justify-end space-x-3 animate-slide-in-right animation-delay-600 flex-1">
-                <div className="text-right">
-                  <p className="text-sm opacity-90">Emergência</p>
-                  <p className="font-bold text-lg">(32)3339-5656</p>
-                </div>
+              <div className="flex items-center justify-center md:justify-start space-x-3 animate-slide-in-right animation-delay-600 flex-1">
                 <div className="bg-white/20 p-3 rounded-full">
                   <Phone className="h-7 w-7" />
+                </div>
+                <div className="text-left">
+                  <p className="text-sm opacity-90">Emergência</p>
+                  <p className="font-bold text-lg">(32)3339-5656</p>
                 </div>
               </div>
             </div>

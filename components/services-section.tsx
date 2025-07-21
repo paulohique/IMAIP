@@ -64,7 +64,7 @@ export function ServicesSection() {
         <div
           className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Por que escolher o Hospital Policlínica?</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-sans">Por que escolher o Hospital Policlínica?</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Nosso compromisso é oferecer atendimento médico de excelência, combinando tradição, inovação e cuidado
             humanizado.

@@ -35,7 +35,7 @@ export function InsuranceSection() {
     <section id="convenios" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Convênios Aceitos</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-sans">Convênios Aceitos</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Trabalhamos com os principais convênios médicos da região para facilitar seu acesso aos nossos serviços de
             saúde.

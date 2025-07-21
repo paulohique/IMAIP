@@ -76,7 +76,7 @@ export function NewsCarousel() {
     <section id="atualizacoes" className="py-20 bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Últimas Atualizações e Notícias</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-sans">Últimas Atualizações e Notícias</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Fique por dentro das novidades, eventos e informações importantes do Hospital Policlínica.
           </p>

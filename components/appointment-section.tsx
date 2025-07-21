@@ -59,7 +59,7 @@ export function AppointmentSection() {
     <section id="agendamento" className="py-20 bg-teal-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Agende sua Consulta</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-sans">Agende sua Consulta</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Facilite seu atendimento agendando sua consulta online. Nossa equipe entrará em contato para confirmar o
             horário.
@@ -201,16 +201,16 @@ export function AppointmentSection() {
                   <h3 className="text-lg font-semibold">Horários de Funcionamento</h3>
                 </div>
                 <div className="space-y-2 text-sm">
-                  <p className="font-semibold text-gray-900 mb-1">Parte Administrativa:</p>
+                  <p className="font-semibold text-gray-900 mb-1">Setor Administrativo:</p>
                   <div className="flex justify-between">
                     <span>Segunda a Sexta:</span>
                     <span className="font-medium">7h às 18h</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Sábado:</span>
-                    <span className="font-medium">7h às 12h</span>
+                    <span>{""}</span>
+                    <span className="font-medium">{""}</span>
                   </div>
-                  <p className="font-semibold text-gray-900 mt-4 mb-1">Hospitalar:</p>
+                  <p className="font-semibold text-gray-900 mt-4 mb-1">Setor Hospitalar:</p>
                   <div className="flex justify-between border-t pt-2 mt-2">
                     <span>Emergência:</span>
                     <span className="font-medium text-teal-600">24 horas</span>
