@@ -1,6 +1,13 @@
+"use client" // This page needs to be a Client Component for the animation hook
+
 import Image from "next/image"
+import { useAnimateNumber } from "@/hooks/useAnimateNumber" // Import the new hook
 
 export default function InstitucionalPage() {
+  const { currentNumber: yearsOfHistory, ref: yearsRef } = useAnimateNumber({ targetNumber: 83 })
+  const { currentNumber: departments, ref: departmentsRef } = useAnimateNumber({ targetNumber: 12 })
+  const { currentNumber: specialties, ref: specialtiesRef } = useAnimateNumber({ targetNumber: 16 })
+
   return (
     <>
       {/* Hero Banner */}
@@ -43,15 +50,21 @@ export default function InstitucionalPage() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-5xl font-bold text-teal-600 mb-2">83</div>
+            <div ref={yearsRef} className="text-5xl font-bold text-teal-600 mb-2">
+              {yearsOfHistory}
+            </div>
             <div className="text-xl text-gray-600">anos de história</div>
           </div>
           <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-5xl font-bold text-teal-600 mb-2">12</div>
+            <div ref={departmentsRef} className="text-5xl font-bold text-teal-600 mb-2">
+              {departments}
+            </div>
             <div className="text-xl text-gray-600">departamentos</div>
           </div>
           <div className="text-center p-6 bg-white rounded-lg shadow-md">
-            <div className="text-5xl font-bold text-teal-600 mb-2">16</div>
+            <div ref={specialtiesRef} className="text-5xl font-bold text-teal-600 mb-2">
+              {specialties}
+            </div>
             <div className="text-xl text-gray-600">especialidades</div>
           </div>
         </div>
