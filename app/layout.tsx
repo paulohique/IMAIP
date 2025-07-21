@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Hospital Policlínica",
   description: "Hospital Policlínica de Barbacena - 82 anos de história",
-    generator: 'v0.dev'
+    generator: ''
 }
 
 export default function RootLayout({

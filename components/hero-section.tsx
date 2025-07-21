@@ -46,16 +46,16 @@ export function HeroSection() {
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl text-white">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up text-left">
+        <div className="container mx-auto px-4 relative z-10 font-sans">
+          <div className="max-w-3xl text-white font-sans">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up text-left font-sans">
               {"Hospital Policlínica"}{" "}
             </h1>
             <p className="text-xl md:text-2xl mb-4 font-semibold animate-fade-in-up animation-delay-200">
               82 ANOS DE HISTÓRIA
             </p>
             <p className="text-lg mb-8 opacity-90 animate-fade-in-up animation-delay-400">
-              Acolher, Conhecer, Cuidar, Acompanhar
+              Na excelência do cuidado, nossa prioridade é você!  
             </p>
             <p className="text-base mb-8 max-w-2xl animate-fade-in-up animation-delay-600">
               Há mais de oito décadas cuidando da saúde da população de Barbacena e região. Oferecemos atendimento
