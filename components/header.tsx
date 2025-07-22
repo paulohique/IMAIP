@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation"
 import { Menu, Phone, Mail, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -83,19 +85,56 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`font-medium transition-all duration-300 hover:scale-105 ${
-                    isActive(item.href)
-                      ? "text-teal-600 border-b-2 border-teal-600"
-                      : "text-gray-700 hover:text-teal-600"
-                  }`}
-                >
-                  {item.name.toUpperCase()}
-                </Link>
-              ))}
+              {navigation.map((item) =>
+                item.name === "Institucional" ? (
+                  <DropdownMenu key={item.name}>
+                    <DropdownMenuTrigger asChild>
+                      <Link
+                        href={item.href}
+                        className={`font-medium transition-all duration-300 hover:scale-105 ${
+                          pathname.startsWith("/institucional")
+                            ? "text-teal-600 border-b-2 border-teal-600"
+                            : "text-gray-700 hover:text-teal-600"
+                        }`}
+                      >
+                        {item.name.toUpperCase()}
+                      </Link>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem className="group">
+                        <Link href="/institucional" className="w-full flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full border border-current group-hover:bg-teal-600 transition-colors" />
+                          Informações
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem className="group">
+                        <Link href="/institucional/historia" className="w-full flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full border border-current group-hover:bg-teal-600 transition-colors" />
+                          História
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem className="group">
+                        <Link href="/institucional/transparencia" className="w-full flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full border border-current group-hover:bg-teal-600 transition-colors" />
+                          Transparência
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`font-medium transition-all duration-300 hover:scale-105 ${
+                      isActive(item.href)
+                        ? "text-teal-600 border-b-2 border-teal-600"
+                        : "text-gray-700 hover:text-teal-600"
+                    }`}
+                  >
+                    {item.name.toUpperCase()}
+                  </Link>
+                ),
+              )}
             </nav>
 
             {/* CTA Buttons */}
@@ -124,19 +163,63 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px]">
                 <div className="flex flex-col space-y-4 mt-8">
-                  {navigation.map((item, index) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className={`py-2 font-medium transition-all duration-300 hover:scale-105 animate-slide-in-right ${
-                        isActive(item.href) ? "text-teal-600" : "text-gray-700 hover:text-teal-600"
-                      }`}
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name.toUpperCase()}
-                    </Link>
-                  ))}
+                  {navigation.map((item, index) =>
+                    item.name === "Institucional" ? (
+                      <Collapsible key={item.name}>
+                        <CollapsibleTrigger asChild>
+                          <Button
+                            variant="ghost"
+                            className={`w-full justify-start py-2 font-medium transition-all duration-300 hover:scale-105 animate-slide-in-right ${
+                              pathname.startsWith("/institucional")
+                                ? "text-teal-600"
+                                : "text-gray-700 hover:text-teal-600"
+                            }`}
+                            style={{ animationDelay: `${index * 0.1}s` }}
+                          >
+                            {item.name.toUpperCase()}
+                          </Button>
+                        </CollapsibleTrigger>
+                        <CollapsibleContent className="ml-4 space-y-2">
+                          <Link
+                            href="/institucional"
+                            className="group flex items-center gap-2 py-2 text-gray-700 hover:text-teal-600 transition-colors"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <span className="w-2 h-2 rounded-full border border-current group-hover:bg-teal-600 transition-colors" />
+                            Informações
+                          </Link>
+                          <Link
+                            href="/institucional/historia"
+                            className="group flex items-center gap-2 py-2 text-gray-700 hover:text-teal-600 transition-colors"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <span className="w-2 h-2 rounded-full border border-current group-hover:bg-teal-600 transition-colors" />
+                            História
+                          </Link>
+                          <Link
+                            href="/institucional/transparencia"
+                            className="group flex items-center gap-2 py-2 text-gray-700 hover:text-teal-600 transition-colors"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <span className="w-2 h-2 rounded-full border border-current group-hover:bg-teal-600 transition-colors" />
+                            Transparência
+                          </Link>
+                        </CollapsibleContent>
+                      </Collapsible>
+                    ) : (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className={`py-2 font-medium transition-all duration-300 hover:scale-105 animate-slide-in-right ${
+                          isActive(item.href) ? "text-teal-600" : "text-gray-700 hover:text-teal-600"
+                        }`}
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name.toUpperCase()}
+                      </Link>
+                    ),
+                  )}
                   <div className="pt-4 space-y-2">
                     <Button
                       variant="outline"
