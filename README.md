@@ -1,30 +1,34 @@
-# Hospital website redesign
+# Teste de Site - IMAIP
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Este projeto é um teste de criação de site para a instituição onde realizo estágio. Foi desenvolvido utilizando **Next.js**, com foco em estrutura, layout e organização de conteúdo para apresentação institucional.
+<img width="1403" height="692" alt="image" src="https://github.com/user-attachments/assets/01d2036b-1c51-42df-ad83-b14e4789d93b" />
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/paulo-henriques-projects-4c286200/v0-hospital-website-redesign)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/djwAyMMASnC)
+## Tecnologias Utilizadas
 
-## Overview
+- Next.js – Framework React para aplicações web modernas
+- React – Biblioteca JavaScript para interfaces de usuário
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## Como Executar Localmente
 
-## Deployment
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/paulohique/IMAIP.git
+   ```
+2. Acesse a pasta do projeto:
+   ```bash
+   cd IMAIP
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+5. Acesse `http://localhost:3000` no navegador para visualizar o site.
 
-Your project is live at:
+## Deploy
 
-**[https://vercel.com/paulo-henriques-projects-4c286200/v0-hospital-website-redesign](https://vercel.com/paulo-henriques-projects-4c286200/v0-hospital-website-redesign)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/djwAyMMASnC](https://v0.dev/chat/projects/djwAyMMASnC)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+O site está hospedado no Vercel e pode ser acessado por este link:  
+https://testimaip.vercel.app
