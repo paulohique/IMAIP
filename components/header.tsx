@@ -108,13 +108,13 @@ export function Header() {
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem className="group">
-                        <Link href="/institucional/historia" className="w-full flex items-center gap-2">
+                        <Link href="/institucional/historia" className="w-full flex items-center gap-2 font-sans">
                           <span className="w-2 h-2 rounded-full border border-current group-hover:bg-teal-600 transition-colors" />
                           História
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem className="group">
-                        <Link href="/institucional/transparencia" className="w-full flex items-center gap-2">
+                        <Link href="/institucional/transparencia" className="w-full flex items-center gap-2 font-sans">
                           <span className="w-2 h-2 rounded-full border border-current group-hover:bg-teal-600 transition-colors" />
                           Transparência
                         </Link>
