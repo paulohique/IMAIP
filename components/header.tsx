@@ -139,13 +139,13 @@ export function Header() {
 
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center space-x-3">
-              <Link href="#">
+              {/* <Link href="#">
                 <Button
                   variant="outline"
                   className="border-teal-600 text-teal-600 hover:bg-teal-50 bg-transparent transition-all duration-300 hover:scale-105"
                 >
                   Portal do Paciente
-                </Button>
+                </Button> */}
               </Link>
               <Link href="/#agendamento">
                 <Button className="bg-teal-600 hover:bg-teal-700 transition-all duration-300 hover:scale-105 hover:shadow-lg">
@@ -221,12 +221,12 @@ export function Header() {
                     ),
                   )}
                   <div className="pt-4 space-y-2">
-                    <Button
+                    {/* <Button
                       variant="outline"
                       className="w-full border-teal-600 text-teal-600 bg-transparent hover:bg-teal-50 transition-all duration-300"
                     >
                       Portal do Paciente
-                    </Button>
+                    </Button> */}
                     <Button className="w-full bg-teal-600 hover:bg-teal-700 transition-all duration-300">
                       Agendar Consulta
                     </Button>

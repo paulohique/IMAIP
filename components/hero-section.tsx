@@ -10,6 +10,7 @@ export function HeroSection() {
   const [isBarVisible, setIsBarVisible] = useState(false)
   const [barWidth, setBarWidth] = useState(0)
   const [showScheduleTooltip, setShowScheduleTooltip] = useState(false)
+  const [showExamTooltip, setShowExamTooltip] = useState(false)
 
   useEffect(() => {
     // Trigger the bar animation after component mounts
@@ -73,16 +74,7 @@ export function HeroSection() {
                   Agendar Consulta
                 </Button>
               </Link>
-              <Link href="#">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-teal-600 bg-transparent transform hover:scale-105 transition-all duration-300"
-                >
-                  <FileText className="mr-2 h-5 w-5" />
-                  Resultados de Exames
-                </Button>
-              </Link>
+
             </div>
           </div>
         </div>
@@ -159,9 +151,9 @@ export function HeroSection() {
       </div>
 
       {/* Quick Access Cards */}
-      <div className="relative z-10 mt-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="relative z-10 mt-12 overflow-visible">
+        <div className="container mx-auto px-4 overflow-visible">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-visible">
             <Link
               href="#agendamento"
               className="bg-teal-600 text-white p-6 rounded-lg shadow-lg hover:bg-teal-700 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl animate-slide-up animation-delay-1000 block"
@@ -174,9 +166,12 @@ export function HeroSection() {
                 </div>
               </div>
             </Link>
-            <Link
-              href="#"
-              className="bg-teal-600 text-white p-6 rounded-lg shadow-lg hover:bg-teal-700 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl animate-slide-up animation-delay-1200 block"
+            <div
+              className={`relative bg-teal-600 text-white p-6 rounded-lg shadow-lg hover:bg-teal-700 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl animate-slide-up animation-delay-1200 overflow-visible ${
+                showExamTooltip ? "z-[100]" : ""
+              }`}
+              onMouseEnter={() => setShowExamTooltip(true)}
+              onMouseLeave={() => setShowExamTooltip(false)}
             >
               <div className="flex items-center space-x-3">
                 <FileText className="h-8 w-8" />
@@ -185,7 +180,22 @@ export function HeroSection() {
                   <p className="text-sm opacity-90">de Exames</p>
                 </div>
               </div>
-            </Link>
+
+              {/* Tooltip with yellow highlights for attention */}
+              {showExamTooltip && (
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full -mt-4 bg-teal-600 text-white px-6 py-3 rounded-lg shadow-xl z-[99999] min-w-[280px] animate-slide-in-up">
+                  <div className="text-center">
+                    <p className="text-sm font-medium">
+                      <span className="text-yellow-400">Segunda a sexta</span> a partir das{" "}
+                      <span className="text-yellow-400">14h</span>
+                    </p>
+                    <p className="text-sm mt-1">Portaria principal</p>
+                  </div>
+                  {/* Arrow pointing down */}
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-transparent border-t-teal-600"></div>
+                </div>
+              )}
+            </div>
             <Link
               href="/contato"
               className="bg-teal-600 text-white p-6 rounded-lg shadow-lg hover:bg-teal-700 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl animate-slide-up animation-delay-1400 block"

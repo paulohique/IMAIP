@@ -83,9 +83,9 @@ export function Footer() {
               <li>
                 <span className="opacity-80">Internação</span>
               </li>
-              <li>
+              {/* <li>
                 <span className="opacity-80">Portal do Paciente</span>
-              </li>
+              </li> */}
             </ul>
           </div>
 
